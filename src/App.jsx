@@ -22,7 +22,6 @@ const App = () => {
     <div className="bg-white dark:bg-gradient-to-br from-purple-950 to-black min-h-screen transition-colors duration-500">
       <NavBar />
       <Routes>
-        {/* Default landing redirects to /home */}
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
