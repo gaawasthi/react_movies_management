@@ -18,7 +18,7 @@ import NotFound from './pages/NotFound';
 
 const App = () => {
   const currentUser = useSelector((state) => state.auth.currentUser);
-  const theme = currentUser?.theme || 'light';
+  const theme = currentUser?.theme || 'dark';
 
   useEffect(() => {
     if (theme === 'dark') {
