@@ -33,7 +33,7 @@ const RecentlyViewed = () => {
                 />
               ))
             ) : (
-              <p className="text-white text-center col-span-full mt-10">
+              <p className=" text-black dark:text-white text-center col-span-full mt-10">
                 No Recently Viewed movies added yet.
               </p>
             )}

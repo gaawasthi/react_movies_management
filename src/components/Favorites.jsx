@@ -33,7 +33,7 @@ const Favorites = () => {
                 />
               ))
             ) : (
-              <p className="text-white text-center col-span-full mt-10">
+              <p className=" text-black dark:text-white text-center col-span-full mt-10">
                 No favorite movies added yet.
               </p>
             )}

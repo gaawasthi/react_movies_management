@@ -32,7 +32,7 @@ const WatchNext = () => {
                 />
               ))
             ) : (
-              <p className="text-white text-center col-span-full mt-10">
+              <p className=" text-black dark:text-white text-center col-span-full mt-10">
                 No watchNext movies added yet.
               </p>
             )}
