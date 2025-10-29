@@ -91,13 +91,19 @@ const Navbar = () => {
               <span className="hidden sm:inline">Movies</span>
             </Link>
 
-            <Link
+
+{
+  currentUser ? (
+   <Link
               to="/profile"
               className="flex items-center gap-2 hover:text-blue-400 transition"
             >
               <User size={20} className="mb-1" />
               <span className="hidden sm:inline">Profile</span>
             </Link>
+  ):null
+}
+         
 
             {currentUser ? (
               <button
