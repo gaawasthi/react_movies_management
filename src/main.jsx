@@ -7,12 +7,11 @@ import store from './redux/app/store.js'
 import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
- 
   <Provider store={store}>
- <BrowserRouter>
-  <StrictMode>
-    <App />
-  </StrictMode>
- </BrowserRouter>
-    </Provider>
+    <BrowserRouter basename="/react_movies_management">
+      <StrictMode>
+        <App />
+      </StrictMode>
+    </BrowserRouter>
+  </Provider>
 )
