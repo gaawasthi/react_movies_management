@@ -47,8 +47,8 @@ const App = () => {
             </PrivateRoute>
           }
         />
-        {/* Catch-all 404 */}
-        <Route path="*" element={<NotFound />} />
+      
+        {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
       <Footer />
     </div>
