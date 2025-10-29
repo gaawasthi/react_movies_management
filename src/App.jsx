@@ -16,16 +16,7 @@ import SearchPage from './pages/SearchPage';
 import NotFound from './pages/NotFound';
 
 const App = () => {
-  const currentUser = useSelector((state) => state.auth.currentUser);
-  const theme = currentUser?.theme || 'dark';
-
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [theme]);
+ 
 
   return (
     <div className="bg-white dark:bg-gradient-to-br from-purple-950 to-black min-h-screen transition-colors duration-500">
@@ -47,7 +38,7 @@ const App = () => {
             </PrivateRoute>
           }
         />
-      
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

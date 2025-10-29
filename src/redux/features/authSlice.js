@@ -27,7 +27,7 @@ const authSlice = createSlice({
         favorites: [],
         watchNext: [],
         recentlyViewed: [],
-        theme: 'light',
+        // theme: 'light',
       };
 
       state.users.push(newUser);
@@ -172,21 +172,6 @@ const authSlice = createSlice({
       localStorage.setItem('currentUser', JSON.stringify(state.currentUser));
     },
 
-    toggleTheme: (state) => {
-      if (!state.currentUser) return;
-
-      const newTheme = state.currentUser.theme === 'dark' ? 'light' : 'dark';
-      state.currentUser.theme = newTheme;
-
-      const index = state.users.findIndex(
-        (user) => user.id === state.currentUser.id
-      );
-      state.users[index] = state.currentUser;
-
-      localStorage.setItem('users', JSON.stringify(state.users));
-      localStorage.setItem('currentUser', JSON.stringify(state.currentUser));
-    },
-
     setTheme: (state, action) => {
       if (!state.currentUser) return;
 
@@ -209,7 +194,6 @@ export const {
   clearError,
   addToFavorite,
   removeFavorite,
-  toggleTheme,
   setTheme,
   addToWatchNext,
   removeWatchNext,
