@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import { Provider, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import store from './redux/app/store';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import PrivateRoute from './components/PrivateRoute';
@@ -32,11 +31,11 @@ const App = () => {
     <div className="bg-white dark:bg-gradient-to-br from-purple-950 to-black min-h-screen transition-colors duration-500">
       <NavBar />
       <Routes>
+        {/* Default landing redirects to /home */}
+        <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/react_movies_management/" element={<Navigate to="/home" />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:id" element={<MovieDetail />} />
         <Route path="/search/:q" element={<SearchPage />} />
@@ -48,6 +47,7 @@ const App = () => {
             </PrivateRoute>
           }
         />
+        {/* Catch-all 404 */}
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
@@ -55,5 +55,4 @@ const App = () => {
   );
 };
 
-
-export default App
+export default App;
